@@ -1,0 +1,10 @@
+*.swp
+target/
+**/*.rs.bk
+.DS_Store
+*.pdb
+clippy/Cargo.toml
+clippy/Cargo.lock
+.idea
+.vscode
+*.iml
