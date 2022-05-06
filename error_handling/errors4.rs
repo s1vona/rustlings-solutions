@@ -12,7 +12,11 @@ enum CreationError {
 
 impl PositiveNonzeroInteger {
     fn new(value: i64) -> Result<PositiveNonzeroInteger, CreationError> {
-        Ok(PositiveNonzeroInteger(value as u64))
+        match value {
+            value if value > 0 => Ok(PositiveNonzeroInteger(value as u64)),
+            value if value < 0 => Err(CreationError::Negative),
+            value => Err(CreationError::Zero),
+        }
     }
 }
 
